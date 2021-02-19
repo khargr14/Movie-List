@@ -1,2 +1,3 @@
 const app = new AppBox
-app.getMovies()
+app.getMovies();
+app.bindEventListeners(); 
