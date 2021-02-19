@@ -157,3 +157,66 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2339)
 
 
+Started GET "/api/v1/movies" for ::1 at 2021-02-19 04:42:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/movies"):
+  
+Started GET "//movies" for ::1 at 2021-02-19 04:42:21 -0500
+Processing by MoviesController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 1.0ms | Allocations: 8459)
+
+
+Started GET "//movies" for ::1 at 2021-02-19 04:44:32 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 2343)
+
+
+Started GET "//movies" for ::1 at 2021-02-19 04:49:14 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 1.5ms | Allocations: 13189)
+
+
+Started GET "/movies" for ::1 at 2021-02-19 04:50:19 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 2367)
+
+
+Started GET "/movies" for ::1 at 2021-02-19 04:52:06 -0500
+Processing by MoviesController#index as */*
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 2367)
+
+
