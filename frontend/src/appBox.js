@@ -1,9 +1,16 @@
 class AppBox {
     movies = []
     review = []
-    url = ""
+    url = "http://localhost:3000"
+    dailyPickS
     
-    getMovie(){
+    getMovies(){
+
+        console.log("something")
+        fetch(this.url + '/movies')
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        .catch(err => alert(err))
 
     }
 

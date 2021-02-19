@@ -1,2 +1,2 @@
 const app = new AppBox
-console.log(app)
+app.getMovies()
