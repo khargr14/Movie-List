@@ -1,5 +1,5 @@
 class AppBox {
-    movies = []
+    static movies = []
     review = []
     url = "http://localhost:3000"
     dailyPicks
@@ -10,11 +10,12 @@ class AppBox {
     }
 
     getRandomMovies(){
+       
         let randomMovies = [];
         for (let i = 0; i < 4; i++ ){
-            randomMovies.push(this.movies[Math.floor(Math.random()*items.length)]);
+            randomMovies.push(AppBox.movies[Math.floor(Math.random()*AppBox.movies.length)]);
         };
-        debugger
+        
         return randomMovies;
 
     }
@@ -24,7 +25,11 @@ class AppBox {
         console.log("something");
         fetch(this.url + '/movies')
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => {
+            data.forEach(movie => {
+                new Movie(movie.title, movie.summary)
+            });
+        })
         .catch(err => alert(err));
 
     }
