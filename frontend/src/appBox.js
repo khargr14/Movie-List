@@ -6,6 +6,7 @@ class AppBox {
 
     bindEventListeners() {
         const btn = document.getElementById('createWhatToReview');
+       
         btn.addEventListener('click', this.getRandomMovies)
     }
 
@@ -15,7 +16,6 @@ class AppBox {
         for (let i = 0; i < 4; i++ ){
             randomMovies.push(AppBox.movies[Math.floor(Math.random()*AppBox.movies.length)]);
         };
-        
         return randomMovies;
 
     }
@@ -24,18 +24,26 @@ class AppBox {
 
         console.log("something");
         fetch(this.url + '/movies')
-        .then(resp => resp.json())
+        .then(resp => resp.json()) 
         .then(data => {
             data.forEach(movie => {
-                new Movie(movie.title, movie.summary)
+                console.log(data)
+                new Movie(movie.title, movie.summary, movie.review)
+                console.log(AppBox.movies)
             });
         })
         .catch(err => alert(err));
-
-    }
-
-    renderMovie(){
         
-    }
+    };
+
+    renderMovies(){
+        const ul = document.createElement('ul');
+        AppBox.movies.forEach(movie => {
+            const li = document.createElement('li');
+            li.innerText = movie.summary;
+            ul.appendChild(li);
+        })
+        document.body.appendChild(ul)
+    };
 
 }

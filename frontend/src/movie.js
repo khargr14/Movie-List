@@ -1,8 +1,9 @@
 class Movie{
-    constructor(title, summary){
+    constructor(title, summary, review){
         this.title = title;
-        this. summary = summary;
+        this.summary = summary;
+        this.review = review; 
         AppBox.movies.push(this);
-        debugger
+        
     }
 }
